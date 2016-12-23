@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>cytoscape</artifactId>
-    <version>2.7.13-SNAPSHOT</version>
+    <version>2.7.13</version>
     <name>Cytoscape</name>
     <description>Webjar for Cytoscape</description>
 
@@ -35,7 +35,7 @@
         <url>http://github.com/webjars/cytoscape</url>
         <connection>scm:git:https://github.com/webjars/cytoscape.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/cytoscape.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>cytoscape-2.7.13</tag>
     </scm>
 
     <dependencies>
