@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>cytoscape</artifactId>
-    <version>2.7.14-SNAPSHOT</version>
+    <version>3.3.0-SNAPSHOT</version>
     <name>Cytoscape</name>
     <description>Webjar for Cytoscape</description>
 
@@ -43,7 +43,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>2.7.13</upstream.version>
+        <upstream.version>3.3.0</upstream.version>
         <upstream.url>https://raw.githubusercontent.com/cytoscape/cytoscape.js/v${upstream.version}/dist</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
     </properties>
@@ -56,19 +56,19 @@
                 <version>1.0-beta-4</version>
                 <executions>
                     <execution>
-			<id>download-js</id>
+                        <id>download-cjs</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>download-single</goal>
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>cytoscape.js</fromFile>
+                            <fromFile>cytoscape.cjs.js</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
-		    <execution>
-			<id>download-min-js</id>
+                    <execution>
+                        <id>download-min-js</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>download-single</goal>
@@ -79,39 +79,27 @@
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
-		    <execution>
-			<id>download-map</id>
+                    <execution>
+                        <id>download-esm</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>download-single</goal>
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>cytoscape.js.map</fromFile>
+                            <fromFile>cytoscape.esm.js</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
-		    <execution>
-			<id>download-min-map</id>
+                    <execution>
+                        <id>download-umd</id>
                         <phase>process-resources</phase>
                         <goals>
                             <goal>download-single</goal>
                         </goals>
                         <configuration>
                             <url>${upstream.url}</url>
-                            <fromFile>cytoscape.min.js.map</fromFile>
-                            <toDir>${destDir}</toDir>
-                        </configuration>
-                    </execution>
-	    	    <execution>
-			<id>download-thread-node</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>download-single</goal>
-                        </goals>
-                        <configuration>
-                            <url>${upstream.url}</url>
-                            <fromFile>thread-node-fork.js</fromFile>
+                            <fromFile>cytoscape.umd.js</fromFile>
                             <toDir>${destDir}</toDir>
                         </configuration>
                     </execution>
